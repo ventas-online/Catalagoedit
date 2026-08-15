@@ -1,0 +1,35 @@
+name: Importar plantilla profesional
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout plantilla
+        uses: actions/checkout@v4
+      - name: Descargar plantilla profesional
+        run: |
+          curl -L -o template.tar.gz https://github.com/ventas-online/Catalago/archive/refs/heads/plantilla-profesional.tar.gz
+          mkdir template
+          tar -xzf template.tar.gz -C template --strip-components=1
+          rm -rf template/.git template/.github
+          cp -a template/. .
+          rm -rf template template.tar.gz
+      - name: Commit plantilla
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No hay cambios que importar."
+          else
+            git commit -m "Importar plantilla profesional [skip ci]"
+            git push
+          fi
