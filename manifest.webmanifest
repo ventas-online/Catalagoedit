@@ -1,0 +1,14 @@
+{
+  "name": "Catálogo Online",
+  "short_name": "Catálogo",
+  "description": "Catálogo online profesional configurable por cliente.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf8",
+  "theme_color": "#9b6879",
+  "lang": "es",
+  "icons": [
+    {"src":"logo.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
