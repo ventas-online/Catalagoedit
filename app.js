@@ -1,7 +1,11 @@
 const config={businessName:'NOMBRE DEL NEGOCIO',whatsapp:'NUMERO_WHATSAPP_CON_CODIGO_PAIS',catalogUrl:'https://TU-USUARIO.github.io/TU-REPOSITORIO/',currency:'USD'};
 const products=[
-{name:'Producto de ejemplo 01',brand:'MARCA',price:0,category:'Categoría',image:'PRODUCTO_01.png',featured:true,description:'Reemplaza este producto de ejemplo por el producto del cliente.'},
-{name:'Producto de ejemplo 02',brand:'MARCA',price:0,category:'Categoría',image:'PRODUCTO_02.png',description:'Reemplaza este producto de ejemplo por el producto del cliente.'}
+{name:'Base Lumière Hydrating',brand:'Lumière',price:18.00,category:'Rostro',image:'assets/foundation.svg',featured:true,description:'Base hidratante de acabado natural. Producto de demostración para reemplazar por el inventario real del cliente.'},
+{name:'Rose Glow Blush',brand:'Lumière',price:12.50,category:'Rostro',image:'assets/blush.svg',featured:true,description:'Rubor en polvo de acabado luminoso. Producto de demostración para reemplazar por el inventario real del cliente.'},
+{name:'Gloss Lumière',brand:'Lumière',price:9.90,category:'Labios',image:'assets/lip-gloss.svg',description:'Brillo labial de acabado brillante. Producto de demostración para reemplazar por el inventario real del cliente.'},
+{name:'Noir Volume Mascara',brand:'Noir Beauty',price:14.00,category:'Ojos',image:'assets/mascara.svg',featured:true,description:'Máscara de pestañas de volumen. Producto de demostración para reemplazar por el inventario real del cliente.'},
+{name:'Botanica Glow Serum',brand:'Botanica',price:22.00,category:'Cuidado facial',image:'assets/serum.svg',description:'Sérum facial de acabado luminoso. Producto de demostración para reemplazar por el inventario real del cliente.'},
+{name:'Mist Setting Spray',brand:'Lumière',price:16.00,category:'Fijación',image:'assets/setting-spray.svg',description:'Bruma fijadora para prolongar el maquillaje. Producto de demostración para reemplazar por el inventario real del cliente.'}
 ];
 let activeCategory='Todos',showFavorites=false;
 let cart=readStorage('clientCatalogCart',{}),favorites=readStorage('clientCatalogFavorites',[]);
