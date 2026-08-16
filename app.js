@@ -1,9 +1,13 @@
-const config={businessName:'Belleza Studio',whatsapp:'',catalogUrl:window.location.href.split('#')[0].split('?')[0],currency:'USD'};
-const products=[
+const DEFAULT_CONFIG={businessName:'Belleza Studio',whatsapp:'',catalogUrl:window.location.href.split('#')[0].split('?')[0],currency:'USD'};
+const DEFAULT_PRODUCTS=[
 {name:'Serum Renovador',brand:'Belleza Studio',price:24.90,category:'Cuidado facial',image:'demo/producto-01.svg',featured:true,description:'Serum ligero para una rutina de cuidado facial elegante y sencilla.'},
 {name:'Crema Hidratante',brand:'Belleza Studio',price:19.90,category:'Cuidado facial',image:'demo/producto-02.svg',featured:true,description:'Hidratación diaria con textura suave y acabado confortable.'},
-{name:'Shampoo Nutritivo',brand:'Belleza Studio',price:16.50,category:'Cabello',image:'demo/producto-03.svg',description:'Limpieza suave para una rutina capilar de uso diario.'}
+{name:'Shampoo Nutritivo',brand:'Belleza Studio',price:16.50,category:'Cabello',image:'demo/producto-03.svg',featured:false,description:'Limpieza suave para una rutina capilar de uso diario.'}
 ];
+function readCatalogData(){try{const x=JSON.parse(localStorage.getItem('catalogoeditAdminData'));if(x?.config&&Array.isArray(x.products))return x}catch{}return null}
+const savedCatalog=readCatalogData();
+const config={...DEFAULT_CONFIG,...(savedCatalog?.config||{}),catalogUrl:window.location.href.split('#')[0].split('?')[0]};
+const products=(savedCatalog?.products||DEFAULT_PRODUCTS).map(p=>({...p,image:String(p.image||'').replace(/^\.\.\//,'')}));
 let activeCategory='Todos',showFavorites=false;
 let cart=readStorage('clientCatalogCart',{}),favorites=readStorage('clientCatalogFavorites',[]);
 const $=s=>document.querySelector(s),money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:config.currency}).format(Number(v)||0);
