@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "required": ["name", "price", "category", "image"],
+  "fields": {
+    "name": "string",
+    "price": "number",
+    "category": "string",
+    "brand": "string",
+    "description": "string",
+    "image": "string",
+    "sku": "string",
+    "available": "boolean"
+  }
+}
