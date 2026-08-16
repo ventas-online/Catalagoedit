@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "nombre": "Producto de ejemplo",
+      "categoria": "Categoría",
+      "precio": 0,
+      "descripcion": "Descripción del producto",
+      "imagen": "ruta/o/url-de-imagen.webp",
+      "marca": "Marca",
+      "sku": "SKU-001",
+      "disponible": true
+    }
+  ]
+}
