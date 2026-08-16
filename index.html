@@ -10,7 +10,7 @@
 <title>Catálogo Online</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 <header class="hero">
@@ -22,7 +22,7 @@
   <section class="toolbar" aria-label="Buscar y filtrar productos">
     <div class="search-wrap"><span>🔎</span><input id="search" type="search" autocomplete="off" placeholder="Buscar producto, marca o categoría..." aria-label="Buscar producto"></div>
     <div id="categories" class="categories"></div>
-    <div class="filter-row"><label>Ordenar <select id="sort"><option value="featured">Recomendados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a menor</option><option value="name">Nombre A-Z</option></select></label><label>Marca <select id="brandFilter"><option value="all">Todas</option></select></label><button id="favoritesFilter" class="filter-button" type="button">♡ Favoritos <span id="favoriteCount">0</span></button></div>
+    <div class="filter-row"><label>Ordenar <select id="sort"><option value="featured">Recomendados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a menor</option><option value="name">Nombre A-Z</option></label><label>Marca <select id="brandFilter"><option value="all">Todas</option></select></label><button id="favoritesFilter" class="filter-button" type="button">♡ Favoritos <span id="favoriteCount">0</span></button></div>
   </section>
   <section class="trust-strip" aria-label="Beneficios"><span>🛍️ Compra fácil</span><span>📲 Pedido por WhatsApp</span><span>💗 Atención personalizada</span><span>🔒 Carrito guardado</span></section>
   <section id="products" class="products" aria-live="polite"></section>
@@ -38,6 +38,6 @@
 <footer><div class="footer-logo">Catálogo Online</div><p>Productos · belleza · estilo · cuidado personal</p><div class="footer-links"><a id="footerWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a><button id="aboutBtn" type="button">Cómo comprar</button><button id="privacyBtn" type="button">Privacidad</button></div><small>Catálogo online · Configurable por cliente</small></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>try{const d=JSON.parse(localStorage.getItem('catalogoeditAdminData'));const c=d?.config;if(c){document.title=c.businessName||document.title;const h=document.querySelector('.brand h1'),e=document.querySelector('.brand .eyebrow'),s=document.querySelector('.brand > div:last-child p:last-child'),w=document.querySelector('.welcome h2'),wt=document.querySelector('.welcome p'),f=document.querySelector('.footer-logo'),l=document.querySelector('.logo img');if(h&&c.businessName)h.textContent=c.businessName;if(e&&c.tagline)e.textContent=c.tagline;if(s&&c.tagline)s.textContent=c.tagline;if(w&&c.welcomeTitle)w.textContent=c.welcomeTitle;if(wt&&c.welcomeText)wt.textContent=c.welcomeText;if(f&&c.businessName)f.textContent=c.businessName;if(l&&c.logoUrl)l.src=String(c.logoUrl).replace(/^\.\.\//,'');const m=document.querySelector('meta[name="theme-color"]');if(m&&c.primaryColor)m.content=c.primaryColor}}</script>
-<script src="app.js"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
