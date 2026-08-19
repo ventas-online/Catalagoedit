@@ -1,12 +1,12 @@
 window.CATALOG_CONFIG = {
-  businessName: 'NOMBRE DEL NEGOCIO',
+  businessName: 'Tu negocio',
   eyebrow: 'CATÁLOGO DIGITAL',
-  tagline: 'Tu negocio, presentado de forma profesional.',
-  description: 'Descubre nuestros productos y realiza tu pedido directamente por WhatsApp.',
+  tagline: 'Descubre nuestros productos y compra de forma sencilla.',
   logo: 'logo.svg',
-  whatsapp: 'NUMERO_WHATSAPP_CON_CODIGO_PAIS',
+  whatsapp: '584000000000',
   instagram: '',
   address: '',
-  catalogUrl: 'https://TU-USUARIO.github.io/TU-REPOSITORIO/',
-  currency: 'USD'
+  schedule: '',
+  currency: 'USD',
+  catalogUrl: window.location.href
 };
