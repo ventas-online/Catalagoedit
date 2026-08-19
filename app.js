@@ -1,8 +1,6 @@
-const config={businessName:'NOMBRE DEL NEGOCIO',whatsapp:'NUMERO_WHATSAPP_CON_CODIGO_PAIS',catalogUrl:'https://TU-USUARIO.github.io/TU-REPOSITORIO/',currency:'USD'};
-const products=[
-{name:'Producto de ejemplo 01',brand:'MARCA',price:0,category:'Categoría',image:'PRODUCTO_01.png',featured:true,description:'Reemplaza este producto de ejemplo por el producto del cliente.'},
-{name:'Producto de ejemplo 02',brand:'MARCA',price:0,category:'Categoría',image:'PRODUCTO_02.png',description:'Reemplaza este producto de ejemplo por el producto del cliente.'}
-];
+const config = window.CATALOG_CONFIG;
+const products = window.CATALOG_PRODUCTS;
+
 let activeCategory='Todos',showFavorites=false;
 let cart=readStorage('clientCatalogCart',{}),favorites=readStorage('clientCatalogFavorites',[]);
 const $=s=>document.querySelector(s),money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:config.currency}).format(Number(v)||0);
