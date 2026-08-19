@@ -35,7 +35,9 @@ function initQR(){if(typeof QRCode!=='undefined')new QRCode($('#qrcode'),{text:c
 function registerSW(){if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{})}
 function init(){
   document.title=`${config.businessName} · Catálogo`;
-  $('#businessName').textContent=config.businessName;$('#footerBusinessName').textContent=config.businessName;
+  $('#businessName').textContent=config.businessName;$('#businessEyebrow').textContent=config.eyebrow||'CATÁLOGO DIGITAL';$('#businessTagline').textContent=config.tagline||'';$('#businessDescription').textContent=config.description||'';$('#footerBusinessName').textContent=config.businessName;$('#footerTagline').textContent=config.tagline||'Catálogo digital · productos · servicios';
+  if(config.logo){$('#businessLogo').src=config.logo;$('#siteFavicon').href=config.logo}
+  const meta=document.querySelector('meta[name="description"]');if(meta)meta.content=config.description||`Catálogo digital de ${config.businessName}`;
   $('#mainWhatsapp').href=wa(`Hola, quiero información sobre los productos de ${config.businessName}.`);$('#footerWhatsapp').href=wa(`Hola, quiero información sobre el catálogo de ${config.businessName}.`);
   renderCategories();renderBrands();renderProducts();renderFavorites();renderCart();initQR();registerSW();
   $('#search').addEventListener('input',renderProducts);$('#sort').addEventListener('change',renderProducts);$('#brandFilter').addEventListener('change',renderProducts);
