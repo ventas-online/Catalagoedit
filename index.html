@@ -11,6 +11,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" id="siteFavicon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme/mvp-premium.css">
 </head>
 <body>
 <header class="hero">
@@ -22,7 +23,7 @@
   <section class="toolbar" aria-label="Buscar y filtrar productos">
     <div class="search-wrap"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="Buscar producto, marca o categoría..." aria-label="Buscar producto"></div>
     <div id="categories" class="categories"></div>
-    <div class="filter-row"><label>Ordenar <select id="sort"><option value="featured">Recomendados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a menor</option><option value="name">Nombre A-Z</option></select></label><label>Marca <select id="brandFilter"><option value="all">Todas</option></select></label><button id="favoritesFilter" class="filter-button" type="button">♡ Favoritos <span id="favoriteCount">0</span></button></div>
+    <div class="filter-row"><label>Ordenar <select id="sort"><option value="featured">Recomendados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a mayor</option><option value="name">Nombre A-Z</option></select></label><label>Marca <select id="brandFilter"><option value="all">Todas</option></select></label><button id="favoritesFilter" class="filter-button" type="button">♡ Favoritos <span id="favoriteCount">0</span></button></div>
   </section>
   <section class="trust-strip" aria-label="Beneficios"><span>Compra fácil</span><span>Pedido por WhatsApp</span><span>Atención personalizada</span><span>Carrito guardado</span></section>
   <section id="products" class="products" aria-live="polite"></section>
